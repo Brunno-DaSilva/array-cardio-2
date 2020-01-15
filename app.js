@@ -17,16 +17,6 @@ const comments = [
   { text: 'Nice Nice Nice!', id: 542328 }
 ];
 
-const arrFamily = [
-  {name: "Bruno", age: 30, title:"Dad"},
-  {name: "Liz", age: 28, title:"Mom"},
-  {name: "Ian", age: 2, title:"Son"},
-  {name: "Baby", age: -1, title:"unknown"}
-
-]
-
-
-
 
 
 /*******************************
@@ -35,12 +25,13 @@ const arrFamily = [
 // Array.prototype.some() 
 // is at least one person 19 or older?
 
-// const isAdult =  people.some((person) => {
-//   const currentYear = (new Date()).getFullYear(); 
-//   return currentYear - person.year >=19; 
-// })
+const isAdult =  people.some((person) => {
+  const currentYear = (new Date()).getFullYear(); 
+  return currentYear - person.year >=19; 
+})
 
-// console.log(isAdult);
+
+console.table(isAdult);
 
 /*******************************
 *             every()  
@@ -49,11 +40,11 @@ const arrFamily = [
 // Array.prototype.every() 
 // is everyone 19 or older?
 
-// const areTheyAdults =  people.every((person) => {
-//   const currentYear = (new Date()).getFullYear(); 
-//   return currentYear - person.year <=19; 
-// })
-// console.log(areTheyAdults);
+const areTheyAdults =  people.every((person) => {
+  const currentYear = (new Date()).getFullYear(); 
+  return currentYear - person.year <=19; 
+})
+console.log(areTheyAdults);
 
 
 /*******************************
@@ -63,6 +54,23 @@ const arrFamily = [
 // Find is like filter, but instead returns just the one you are looking for
 // find the comment with the ID of 823423
 
-// Array.prototype.findIndex()
+const comment = comments.find(comment => comment.id === 823423);
+
+console.log(comment);
+
+
+/*******************************
+*           findIndex()
+*******************************/
 // Find the comment with this ID
 // delete the comment with the ID of 823423
+
+    const index = comments.findIndex(comment => comment.id === 823423);
+    console.log(index);
+
+    // comments.splice(index, 1);
+
+    const newComments = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ];
