@@ -104,6 +104,7 @@ body {
 
 .container > div {
   background-color: var(--light-font-color);
+  border-radius: 4px;
 }
 .container > div:nth-child(odd) {
   background-color: var(--light-font-color-title);
