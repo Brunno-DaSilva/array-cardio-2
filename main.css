@@ -20,7 +20,6 @@
   --gray-neutral-color: #63717d;
 }
 
-
 body {
   padding: 0;
   margin: 0;
@@ -43,7 +42,6 @@ body {
 /*******************************
 *  START - Navigation Style    
 *******************************/
-
 
 .navbar {
   height: 30px;
@@ -81,21 +79,56 @@ body {
   align-items: center;
 }
 
-
 /*******************************
 *    END - Navigation Style    
 *******************************/
 
+.title h1 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 5rem;
+}
 
-.main-data{
-  margin: 3.5rem;
-  font-size: 2rem; 
+.title {
+  margin-bottom: -3%;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  background-color: var(--light-font-color);
+}
+.container > div:nth-child(odd) {
+  background-color: var(--light-font-color-title);
+}
+
+.blocks-of-code {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 47vw;
+  max-height: 70vh !important;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.blocks-of-code h3 {
+  font-family: "helvetica neue", sans-serif;
+  font-size: 2rem;
 }
 
 /*******************************
 *    Main Container Style
 *******************************/
-
 
 /*******************************
 *     Footer and SVG

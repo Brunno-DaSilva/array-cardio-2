@@ -1,76 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Array Cardio 2 💪💪</title>
 
-  <title>Array Cardio 2 💪💪</title>
+    <!--Main Style -->
+    <link rel="stylesheet" href="main.css" />
 
-  <!--Main Style -->
-  <link rel="stylesheet" href="main.css" />
+    <!--FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
 
-  <!--FontAwesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+    <!--Prism JS-->
+    <link rel="stylesheet" href="./prism.css" />
+  </head>
 
-  <!--Prismjs-->
-  <link href="https://myCDN.com/prism@v1.x/themes/prism.css" rel="stylesheet" />
-
-  <script src="https://myCDN.com/prism@v1.x/components/prism-core.min.js"></script>
-  <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
-
-</head>
-
-<body>
-  <header>
-    <div class="navbar">
-      <div class="navbar-items">
-        <div> <img
-            src="https://res.cloudinary.com/duprwuo4j/image/upload/c_scale,w_155/v1574831158/imgs_starwars/imgs/BLOGO_k36v5y.png"
-            alt="logo" />
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="navbar-items">
+          <div>
+            <img
+              src="https://res.cloudinary.com/duprwuo4j/image/upload/c_scale,w_155/v1574831158/imgs_starwars/imgs/BLOGO_k36v5y.png"
+              alt="logo"
+            />
+          </div>
+          <div><a href="index.html">Home</a></div>
+          <div><a href="/about/about.html">About</a></div>
+          <div><a href="/contact/contact.html">Contact</a></div>
         </div>
-        <div><a href="index.html">Home</a></div>
-        <div><a href="/about/about.html">About</a></div>
-        <div><a href="/contact/contact.html">Contact</a></div>
+      </div>
+    </header>
+    <div class="title">
+      <h1>
+        Arrays and Methods &#129409;
+      </h1>
+    </div>
+
+    <div class="container">
+      <div class="blocks-of-code">
+        <div>
+          <h3>Start with the following Arrays</h3>
+        </div>
+        <div>
+          <pre class="language-JavaScript">
+          <code>
+          const people = [
+            { name: "Bruno", year: 1989 },
+            { name: "Liz", year: 1991 },
+            { name: "Ian", year: 2017 },
+            { name: "BabyIncognito", year: 2020 }
+          ];
+          
+          const comments = [
+            { text: "Let's Code an hour a day", id: 33325 },
+            { text: "I start my day with a dev Article", id: 552658 },
+            { text: "Two JavaScript Challenges", id: 10205688 },
+            { text: "Work on something meaningful", id: 23566 },
+            { text: "Relax, enjoy family, meditate", id: 542328 }
+          ];
+      </code>
+        </pre>
+        </div>
+      </div>
+      <div class="blocks-of-code">
+        <div>
+          <h3>Is at least one person 19 or older?</h3>
+        </div>
+        <div>
+          <pre class="language-JavaScript">
+          <code>
+          /*******************************
+          *           some()
+          *******************************/
+
+          // Array.prototype.some()
+           
+          const isAdult = people.some(person => {
+            const currentYear = new Date().getFullYear();
+            return currentYear - person.year >= 19;
+          });
+          console.table(isAdult);
+      </code>
+        </pre>
+        </div>
+      </div>
+      <div class="blocks-of-code">
+        <div>
+          <h3>Is everyone 19 or older?</h3>
+        </div>
+        <div>
+          <pre class="language-JavaScript">
+          <code>
+            /*******************************
+            *         every()
+            *******************************/
+            // Array.prototype.every()
+
+            const areTheyAdults = people.every(person => {
+              const currentYear = new Date().getFullYear();
+              return currentYear - person.year <= 19;
+            });
+            console.log(areTheyAdults);
+      </code>
+        </pre>
+        </div>
+      </div>
+
+      <div class="blocks-of-code">
+        <div>
+          <h3>Find the comment with the ID of 33325</h3>
+        </div>
+        <div>
+          <pre class="language-JavaScript">
+          <code>
+            /*******************************
+            *           find()
+            *******************************/
+            // Array.prototype.find()
+           // Find is like filter, but instead returns just the one you are 
+          // looking to find a specific instance
+
+          const comment = comments.find(comment => comment.id === 33325);
+          console.log(comment);
+
+      </code>
+        </pre>
+        </div>
+      </div>
+
+      <div class="blocks-of-code">
+        <div>
+          <h3>Find the comment with the ID of 33325</h3>
+        </div>
+        <div class="code">
+          <pre class="language-JavaScript">
+          <code>
+            /*******************************
+            *         findIndex()
+            *******************************/
+          // Find the comment with this ID
+          // delete the comment with the ID of 23566
+
+          const index = comments.findIndex(comment => comment.id === 23566);
+          console.log(index);
+
+        // comments.splice(index, 1);
+          const newComments = [
+          ...comments.slice(0, index), 
+          ...comments.slice(index + 1)
+          ];
+      </code>
+        </pre>
+        </div>
       </div>
     </div>
 
-  </header>
+    <footer>
+      <img
+        src="https://res.cloudinary.com/duprwuo4j/image/upload/c_scale,w_155/v1574831158/imgs_starwars/imgs/BLOGO_k36v5y.png"
+        alt="logo"
+      />
+      <p>&copy 2020 Bruno DaSilva<span> Front-End Developer</span></p>
+      <div class="info-Bruno">
+        <p>More Projects</p>
+        <a href="https://github.com/DaSilvaBrunoTexas" target="_blank"
+          ><i class="fab fa-github-alt"></i
+        ></a>
 
+        <a href="https://www.linkedin.com/in/bruno-dasilva/" target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
 
-  <div class="container">
-    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+        <a href="http://bruno-dasilva.com/" target="_blank">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </footer>
 
-    <h2>Some()</h2>
-    <pre><code class="language-css">p { 
-      color: red; 
-    }</code></pre>
-
-
-  </div>
-
-  <footer>
-    <img
-      src="https://res.cloudinary.com/duprwuo4j/image/upload/c_scale,w_155/v1574831158/imgs_starwars/imgs/BLOGO_k36v5y.png"
-      alt="logo" />
-    <p>&copy 2020 Bruno DaSilva<span> Front-End Developer</span></p>
-    <div class="info-Bruno">
-      <p>More Projects</p>
-      <a href="https://github.com/DaSilvaBrunoTexas" target="_blank"><i class="fab fa-github-alt"></i></a>
-
-      <a href="https://www.linkedin.com/in/bruno-dasilva/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-
-      <a href="http://bruno-dasilva.com/" target="_blank">
-        <i class="fas fa-globe-americas"></i>
-      </a>
-    </div>
-  </footer>
-
-
-
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+    <script src="prism.js"></script>
+  </body>
 </html>
